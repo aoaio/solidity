@@ -1295,7 +1295,8 @@ bool ExpressionCompiler::visit(MemberAccess const& _memberAccess)
 				);
 				m_context << Instruction::BALANCE;
 			}
-			else if ((set<string>{"send", "transfer", "call", "callcode", "delegatecall"}).count(member))
+
+			else if ((set<string>{"send", "transfer", "call", "callcode", "delegatecall", "balanceOf", "transferAsset", "sendAsset"}).count(member)) //
 				utils().convertType(
 					*_memberAccess.expression().annotation().type,
 					IntegerType(160, IntegerType::Modifier::Address),
