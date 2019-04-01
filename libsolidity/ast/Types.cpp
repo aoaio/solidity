@@ -555,15 +555,18 @@ MemberList::MemberMap AddressType::nativeMembers(ContractDefinition const*) cons
 		{"call", make_shared<FunctionType>(strings{"bytes memory"}, strings{"bool", "bytes memory"}, FunctionType::Kind::BareCall, false, StateMutability::Payable)},
 		{"callcode", make_shared<FunctionType>(strings{"bytes memory"}, strings{"bool", "bytes memory"}, FunctionType::Kind::BareCallCode, false, StateMutability::Payable)},
 		{"delegatecall", make_shared<FunctionType>(strings{"bytes memory"}, strings{"bool", "bytes memory"}, FunctionType::Kind::BareDelegateCall, false)},
-		{"staticcall", make_shared<FunctionType>(strings{"bytes memory"}, strings{"bool", "bytes memory"}, FunctionType::Kind::BareStaticCall, false, StateMutability::View)}
+		{"staticcall", make_shared<FunctionType>(strings{"bytes memory"}, strings{"bool", "bytes memory"}, FunctionType::Kind::BareStaticCall, false, StateMutability::View)},
+//		{"send", make_shared<FunctionType>(strings{"uint"}, strings{"bool"},FunctionType::Kind::Send, false, StateMutability::Payable)},
+//		{"transfer", make_shared<FunctionType>(strings{"uint"}, strings(),FunctionType::Kind::Transfer, false, StateMutability::Payable)},
+		{"balanceOf", make_shared<FunctionType>(strings{"address"}, strings{"uint"}, FunctionType::Kind::BalanceOf, false, StateMutability::View)},
+		{"transferAsset", make_shared<FunctionType>(strings{"address", "uint"}, strings(), FunctionType::Kind::TransferAsset, false, StateMutability::Payable)},
+		{"sendAsset", make_shared<FunctionType>(strings{"address", "uint"}, strings{"bool"}, FunctionType::Kind::SendAsset, false, StateMutability::Payable)},
+		{"isDelegate", make_shared<FunctionType>(strings(), strings{"bool"}, FunctionType::Kind::IsDelegate, false, StateMutability::View)},
+		{"getDelegateInfo", make_shared<FunctionType>(strings(), strings{"uint"}, FunctionType::Kind::GetDelegateInfo, false, StateMutability::View)}
 	};
 	if (m_stateMutability == StateMutability::Payable) {
-		members.emplace_back(MemberList::Member{"send", make_shared<FunctionType>(strings{"uint"}, strings{"bool"},FunctionType::Kind::Send)});
-		members.emplace_back(MemberList::Member{"transfer", make_shared<FunctionType>(strings{"uint"}, strings(),FunctionType::Kind::Transfer)});
-		members.emplace_back(MemberList::Member{"transferAsset",make_shared<FunctionType>(strings{"address", "uint"}, strings(),FunctionType::Kind::TransferAsset)});
-		members.emplace_back(MemberList::Member{"sendAsset",make_shared<FunctionType>(strings{"address", "uint"}, strings{"bool"},FunctionType::Kind::SendAsset)});
-		members.emplace_back(MemberList::Member{"isDelegate",make_shared<FunctionType>(strings(), strings{"bool"},FunctionType::Kind::IsDelegate)});
-		members.emplace_back(MemberList::Member{"getDelegateInfo",make_shared<FunctionType>(strings(), strings{"uint"},FunctionType::Kind::GetDelegateInfo)});
+        members.emplace_back(MemberList::Member{"send", make_shared<FunctionType>(strings{"uint"}, strings{"bool"},FunctionType::Kind::Send)});
+        members.emplace_back(MemberList::Member{"transfer", make_shared<FunctionType>(strings{"uint"}, strings(),FunctionType::Kind::Transfer)});
 	}
 	return members;
 }
