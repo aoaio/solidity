@@ -595,7 +595,7 @@ MemberList::MemberMap IntegerType::nativeMembers(ContractDefinition const*) cons
 			{"sendAsset", make_shared<FunctionType>(strings{ "address","uint" }, strings{ "bool" }, FunctionType::Kind::SendAsset) },
 			{"isDelegate", make_shared<FunctionType>(strings(), strings{ "bool" }, FunctionType::Kind::IsDelegate) },
 			{"getDelegateInfo", make_shared<FunctionType>(strings(), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfo) }
-			{"getDelegateInfo5", make_shared<FunctionType>(strings("address","address","address","address"), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfo5) }
+			{"getDelegateInfos", make_shared<FunctionType>(strings("address","address","address","address"), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfos) }
 			{"getDelegateTotalVote", make_shared<FunctionType>(strings(), strings{ "uint256" }, FunctionType::Kind::GetDelegateTotalVote) }
 
 		};
@@ -2488,7 +2488,7 @@ string FunctionType::richIdentifier() const
 	case Kind::SendAsset: id += "sendAsset"; break;
 	case Kind::IsDelegate: id += "isDelegate"; break;
 	case Kind::GetDelegateInfo: id += "getDelegateInfo"; break;
-	case Kind::GetDelegateInfo5: id += "getDelegateInfo5"; break;
+	case Kind::GetDelegateInfos: id += "getDelegateInfos"; break;
 	case Kind::GetDelegateTotalVote: id += "getDelegateTotalVote"; break;
 	case Kind::BalanceOf: id += "balanceOf"; break;
 	case Kind::SHA3: id += "sha3"; break;

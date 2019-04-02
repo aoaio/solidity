@@ -626,7 +626,7 @@ namespace dev {
                     case FunctionType::Kind::SendAsset:
                     case FunctionType::Kind::BalanceOf:
                     case FunctionType::Kind::IsDelegate:
-                    case FunctionType::Kind::GetDelegateInfo5:
+                    case FunctionType::Kind::GetDelegateInfos:
                     case FunctionType::Kind::GetDelegateTotalVote:
                     case FunctionType::Kind::GetDelegateInfo: {
                         _functionCall.expression().accept(*this);
@@ -658,8 +658,8 @@ namespace dev {
                         if (function.kind() == FunctionType::Kind::GetDelegateInfo) {
                             m_context << Instruction::GETDELEGATEINFO;
                         }
-                        if (function.kind() == FunctionType::Kind::GetDelegateInfo5) {
-                            m_context << Instruction::GETDELEGATEINFO5;
+                        if (function.kind() == FunctionType::Kind::GetDelegateInfos) {
+                            m_context << Instruction::GETDELEGATEINFOS;
                         }
                         if (function.kind() == FunctionType::Kind::GetDelegateTotalVote) {
                             m_context << Instruction::GetDelegateTotalVote;
@@ -1080,7 +1080,7 @@ namespace dev {
                             case FunctionType::Kind::BalanceOf:
                             case FunctionType::Kind::IsDelegate:
                             case FunctionType::Kind::GetDelegateTotalVote:
-                            case FunctionType::Kind::GetDelegateInfo5:
+                            case FunctionType::Kind::GetDelegateInfos:
                             case FunctionType::Kind::GetDelegateInfo:
                                 _memberAccess.expression().accept(*this);
                                 m_context << funType->externalIdentifier();
@@ -1176,7 +1176,7 @@ namespace dev {
                             m_context << Instruction::BALANCE;
                         } else if ((set<string>{"send", "transfer", "call", "callcode", "delegatecall", "balanceOf",
                                                 "transferAsset", "sendAsset", "isDelegate",
-                                                "getDelegateInfo","getDelegateInfo5","getDelegateTotalVote"}).count(member)) //
+                                                "getDelegateInfo","getDelegateInfos","getDelegateTotalVote"}).count(member)) //
                             utils().convertType(
                                     *_memberAccess.expression().annotation().type,
                                     IntegerType(160, IntegerType::Modifier::Address),

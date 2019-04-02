@@ -176,7 +176,7 @@ const std::map<std::string, Instruction> dev::solidity::c_instructions =
 	{"ASSETVALUE", Instruction::ASSETVALUE},
 	{"ISDELEGATE", Instruction::ISDELEGATE},
 	{"GETDELEGATEINFO", Instruction::GETDELEGATEINFO},
-	{"GETDELEGATEINFO5", Instruction::GETDELEGATEINFO5},
+	{"GETDELEGATEINFOS", Instruction::GETDELEGATEINFOS},
 	{"GETDELEGATETOTALVOTE", Instruction::GETDELEGATETOTALVOTE}
 
 };
@@ -329,7 +329,7 @@ static const std::map<Instruction, InstructionInfo> c_instructionInfo =
 	{Instruction::SENDASSET, 	{ "SENDASSET",		0, 3, 1, true, Tier::Special } },
 	{Instruction::ISDELEGATE, 	{ "ISDELEGATE",		0, 1, 1, false, Tier::Special } },
 	{Instruction::GETDELEGATEINFO, 	{ "GETDELEGATEINFO",		0, 1, 1, false, Tier::Special } },
-	{Instruction::GETDELEGATEINFO5, 	{ "GETDELEGATEINFO5",		0, 5, 1, false, Tier::Special } },
+	{Instruction::GETDELEGATEINFOS, 	{ "GETDELEGATEINFOS",		0, 5, 1, false, Tier::Special } },
 	{Instruction::GETDELEGATETOTALVOTE, 	{ "GETDELEGATETOTALVOTE",		0, 1, 1, false, Tier::Special } },
 
 };
