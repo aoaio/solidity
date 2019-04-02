@@ -96,6 +96,7 @@ namespace GasCosts
 	static unsigned const copyGas = 1;
 	static unsigned const balanceOfGas = 50;
 	static unsigned const transferAssetGas = 550;
+	static unsigned const delegateQueryOfGas = 50;
 }
 
 /**

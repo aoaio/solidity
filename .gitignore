@@ -10,6 +10,7 @@ prerelease.txt
 # Precompiled Headers
 *.gch
 *.pch
+*.vscode
 
 # Compiled Dynamic libraries
 *.so

@@ -1,3 +1,8 @@
+### 0.4.24-aoaio-v1.3 (2019-04-02)
+Features:
+ * Add delegate information query
+ and functions of type ``isDelegate()``, ``getDelegateInfo()`` , ``getDelegateInfo5(address,address,address,address)``, ``getDelegateTotalVote()``.
+
 ### 0.4.24-aoaio-v1.2 (2019-01-04)
 
 Bugfixes:
