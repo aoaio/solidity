@@ -899,7 +899,7 @@ public:
 		SendAsset,
 		IsDelegate, /// < is delegate
 		GetDelegateInfo, /// < get information of delegate
-		GetDelegateInfo5, /// < get information of five delegate 
+		GetDelegateInfos, /// < get information of five delegates
 		GetDelegateTotalVote,
 		Transfer, ///< CALL, but without data and throws on error
 		SHA3, ///< SHA3
