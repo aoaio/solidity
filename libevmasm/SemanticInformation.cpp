@@ -218,7 +218,7 @@ bool SemanticInformation::invalidatesStorage(Instruction _instruction)
 	case Instruction::SENDASSET:
 	case Instruction::ISDELEGATE:
 	case Instruction::GETDELEGATEINFO:
-	case Instruction::GETDELEGATEINFO5:
+	case Instruction::GETDELEGATEINFOS:
 	case Instruction::GETDELEGATETOTALVOTE:
 		return true;
 	default:
@@ -279,7 +279,7 @@ bool SemanticInformation::invalidInViewFunctions(Instruction _instruction)
 	case Instruction::TRANSFERASSET:
 	case Instruction::ISDELEGATE:
 	case Instruction::GETDELEGATEINFO:
-	case Instruction::GETDELEGATEINFO5:
+	case Instruction::GETDELEGATEINFOS:
 	case Instruction::GETDELEGATETOTALVOTE:
 		return true;
 	default:
