@@ -594,8 +594,8 @@ MemberList::MemberMap IntegerType::nativeMembers(ContractDefinition const*) cons
 			{"transferAsset", make_shared<FunctionType>(strings{ "address","uint" }, strings(), FunctionType::Kind::TransferAsset)},
 			{"sendAsset", make_shared<FunctionType>(strings{ "address","uint" }, strings{ "bool" }, FunctionType::Kind::SendAsset) },
 			{"isDelegate", make_shared<FunctionType>(strings(), strings{ "bool" }, FunctionType::Kind::IsDelegate) },
-			{"getDelegateInfo", make_shared<FunctionType>(strings(), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfo) }
-			{"getDelegateInfos", make_shared<FunctionType>(strings("address","address","address","address"), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfos) }
+			{"getDelegateInfo", make_shared<FunctionType>(strings(), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfo) },
+			{"getDelegateInfos", make_shared<FunctionType>(strings( "address","address","address","address" ), strings{ "uint256" }, FunctionType::Kind::GetDelegateInfos) },
 			{"getDelegateTotalVote", make_shared<FunctionType>(strings(), strings{ "uint256" }, FunctionType::Kind::GetDelegateTotalVote) }
 
 		};
