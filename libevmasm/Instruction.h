@@ -195,6 +195,9 @@ enum class Instruction: uint8_t
 	ASSETVALUE,			///< msg.assetvalue, get the asset value of a transaction. msg.value means the mainchain token, and this assetvalue means user token value specified by msg.asset.
 	ISDELEGATE,			///< is delegate.
 	GETDELEGATEINFO,	///< get.delegate.info, get the information of delegate.
+    GETDELEGATEINFOS,	///< get.delegate.info of five, get the information of delegate.
+    GETDELEGATETOTALVOTE,	///< get all delegate.info , get the information of delegate.
+
 
 	CREATE = 0xf0,		///< create a new account with associated code
 	CALL,				///< message-call into an account
