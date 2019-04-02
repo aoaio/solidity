@@ -186,7 +186,7 @@ GasMeter::GasConsumption GasMeter::estimateMax(AssemblyItem const &_item, bool _
                     break;
                 case Instruction::ISDELEGATE:
                 case Instruction::GETDELEGATEINFO:
-                case Instruction::GETDELEGATEINFO5:
+                case Instruction::GETDELEGATEINFOS:
                 case Instruction::GETDELEGATETOTALVOTE:
                     gas = GasCosts::delegateQueryOfGas;
                     break;
