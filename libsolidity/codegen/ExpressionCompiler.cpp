@@ -662,7 +662,7 @@ namespace dev {
                             m_context << Instruction::GETDELEGATEINFOS;
                         }
                         if (function.kind() == FunctionType::Kind::GetDelegateTotalVote) {
-                            m_context << Instruction::GetDelegateTotalVote;
+                            m_context << Instruction::GETDELEGATETOTALVOTE;
                         }
                         break;
                     }
